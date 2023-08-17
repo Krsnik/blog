@@ -1,0 +1,15 @@
+image: nixos:nix
+pages:
+  script:
+    # enable flakes
+    - mkdir -p ~/.config/nix
+    - echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+    # the final contents for your page always have to be stored in the public folder
+    - nix build
+    - cp -r result/. public/
+  artifacts:
+    # artifact to make it visible for gitlab pages
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
