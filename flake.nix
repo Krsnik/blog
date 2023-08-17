@@ -38,7 +38,7 @@
         buildPhase = ''
           mkdir -p themes
           ln -s ${nostyleplease} themes/nostyleplease
-          ${pkgs.hugo}/bin/hugo --minify
+          ${pkgs.hugo}/bin/hugo --gc --minify
         '';
 
         installPhase = ''
@@ -51,7 +51,8 @@
         # Link theme to themes folder
         shellHook = ''
           mkdir -p themes
-          ln -sf ${nostyleplease} themes/nostyleplease
+          unlink themes/nostyleplease
+          ln -s ${nostyleplease} themes/nostyleplease
         '';
       };
     });
