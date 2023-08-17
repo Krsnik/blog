@@ -1,25 +1,12 @@
-# Deploying to nginx webserver
+# Kristian's Reproducible Website
 
-Adapted from [AveryanAlex's blog](https://averyan.ru/en/p/nix-flakes-hugo)
+This project is my personal website, using Hugo with asciidoc as a static site generator.
+The site is hosted on GitLab pages, using the supplied `.gitlab-ci.yaml` file, which just builds the `flake.nix` file.
 
-```nix
-{
-  inputs.blog.url = "git+https://git.krsnik.at/Kristian/blog"
-}
-```
+## Development
 
-Setup nginx virtualHost to serve your site:
+To preview changes serve the website with `hugo serve` and set `draft: false` in your blogpost.
 
-```nix
-{ inputs, pkgs, ... }:
-{
-  services.nginx.virtualHosts."blog.krsnik.at" = {
-    root = inputs.packages.default.${pkgs.hostPlatform.system};
-    ssl = {
-      enableACME = true;
-      forceSSL = true;
-    };
-  };
-}
-```
-Test
+## Deployment
+
+Just push the changes to GitLab and the automatic CI/CD will build and deploy the website.
