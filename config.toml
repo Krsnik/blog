@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://krezzlu.gitlab.io/blog'
 languageCode = 'en-us'
 title = "Kristian's Blog"
 
