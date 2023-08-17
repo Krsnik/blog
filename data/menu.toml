@@ -1,0 +1,21 @@
+[[entries]]
+title = "me"
+
+[[entries.entries]]
+title = "email: <a href='mailto:contact@krsnik.at'>contact@krsnik.at</a>"
+
+[[entries]]
+title = "rss"
+url = "index.xml"
+
+[[entries]]
+title = "posts"
+
+[entries.post_list]
+limit = 0
+show_more = true
+show_more_text = "See archive..."
+show_more_url = "posts"
+
+[[entries]]
+title = "theme used: <a href='https://github.com/Masellum/hugo-theme-nostyleplease'>no style, please!</a>"
