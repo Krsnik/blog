@@ -4,8 +4,16 @@ title = "Kristian's Blog"
 
 theme = 'nostyleplease'
 
+[params]
+
+[params.theme_config]
+appearance = "auto"
+back_home_text = "$HOME"
+date_format = "2006-01-02"
+
 [security.exec]
-allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+
 
 [markup]
 [markup.goldmark]
@@ -31,9 +39,3 @@ tabWidth = 4
 startLevel = 2
 endLevel = 3
 ordered = false
-
-[params]
-[params.theme_config]
-appearance = "auto"
-back_home_text = "$HOME"
-date_format = "2006-01-02"
