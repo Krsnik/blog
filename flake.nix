@@ -19,6 +19,8 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+      formatter = pkgs.alejandra;
+
       packages.default = pkgs.stdenv.mkDerivation {
         name = "blog";
 
