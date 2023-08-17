@@ -34,6 +34,9 @@
             && (baseNameOf path == "themes" || baseNameOf path == "public")))
         ./.;
 
+        # To add asciidoc support
+        nativeBuildInputs = [pkgs.asciidoctor];
+
         # Link theme to themes folder and build
         buildPhase = ''
           mkdir -p themes
@@ -47,7 +50,7 @@
       };
 
       devShells.default = pkgs.mkShellNoCC {
-        packages = with pkgs; [hugo];
+        packages = with pkgs; [hugo asciidoctor];
         # Link theme to themes folder
         shellHook = ''
           mkdir -p themes

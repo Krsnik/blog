@@ -1,36 +1,39 @@
-baseURL = 'https://krezzlu.gitlab.io/blog'
+baseURL = 'https://blog.krsnik.at'
 languageCode = 'en-us'
 title = "Kristian's Blog"
 
 theme = 'nostyleplease'
 
+[security.exec]
+allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.parser]
-      [markup.goldmark.parser.attribute]
-        block = true
-        title = true
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = true
-    hl_Lines = ''
-    hl_inline = false
-    lineAnchors = ''
-    lineNoStart = 1
-    lineNos = true
-    lineNumbersInTable = true
-    noClasses = true
-    noHl = false
-    style = 'rtt'
-    tabWidth = 4
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 3
-    ordered = false
+[markup.goldmark]
+[markup.goldmark.parser]
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = true
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noClasses = true
+noHl = false
+style = 'rtt'
+tabWidth = 4
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = false
 
 [params]
-  [params.theme_config]
-    appearance = "auto"
-    back_home_text = "$HOME"
-    date_format = "2006-01-02"
+[params.theme_config]
+appearance = "auto"
+back_home_text = "$HOME"
+date_format = "2006-01-02"
