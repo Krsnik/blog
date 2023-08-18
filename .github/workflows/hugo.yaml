@@ -37,6 +37,8 @@ jobs:
       - name: Update nix channel
         run: "nix-channel --update"
       - name: Install Node dependency for GitHub actions
+        env:
+          NIXPKGS_ALLOW_INSECURE: "1"
         run: "nix-env -iA nixpkgs.nodejs_16"
       - name: Checkout
         uses: actions/checkout@v3
