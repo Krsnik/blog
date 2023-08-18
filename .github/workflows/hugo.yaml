@@ -32,6 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     container: nixos/nix
     steps:
+      - name: Add nix channel
+        run: "nix-channel --add https://nixos.org/channels/nixpkgs-unstable"
+      - name: Update nix channel
+        run: "nix-channel --update"
       - name: Install Node dependency for GitHub actions
         run: "nix-env -iA nixpkgs.nodejs_16"
       - name: Checkout
