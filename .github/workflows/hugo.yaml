@@ -32,25 +32,21 @@ jobs:
     runs-on: ubuntu-latest
     container: nixos/nix
     steps:
-      - name: Add nix channel
-        run: "nix-channel --add https://nixos.org/channels/nixpkgs-unstable"
-      - name: Update nix channel
-        run: "nix-channel --update"
-      - name: Install Node dependency for GitHub actions
-        env:
-          NIXPKGS_ALLOW_INSECURE: "1"
-        run: "nix-env -iA nixpkgs.nodejs_16"
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
         with:
-          submodules: recursive
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build with Nix
+        run: "nix build"
+
+      - name: Copy public folder
+        run: "cp -r result/. public/"
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Build with Nix
-        run: "nix build --experimental-features 'nix-command flakes'"
-      - name: Copy public folder
-        run: "cp -r result/. public/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
