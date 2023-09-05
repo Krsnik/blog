@@ -4,6 +4,9 @@ title = "me"
 [[entries.entries]]
 title = "email: <a href='mailto:contact@krsnik.at'>contact@krsnik.at</a>"
 
+[[entries.entries]]
+title = "gpg: <a href='/gpg.txt'>9A36 7329 2DD3 AC71 A8AD  F35F A618 BA9F BDF8 681C</a>"
+
 [[entries]]
 title = "rss"
 url = "index.xml"
